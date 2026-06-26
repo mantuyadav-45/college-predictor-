@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UGEAC College Predictor 2026</title>
+    <meta name="description" content="Predict your admission chances in Bihar Engineering Colleges based on UGEAC rank and category.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-elements">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <main class="container">
+        <header>
+            <h1>UGEAC College Predictor <span class="badge">2026</span></h1>
+            <p>Based on previous year opening & closing ranks and latest seat matrix</p>
+        </header>
+
+        <section class="predictor-card">
+            <form id="predictor-form">
+                <div class="form-group">
+                    <label for="rank">Your UGEAC Rank</label>
+                    <input type="number" id="rank" name="rank" placeholder="Enter your rank (e.g., 2500)" required min="1">
+                </div>
+                
+                <div class="form-group">
+                    <label for="category">Your Category</label>
+                    <select id="category" name="category" required>
+                        <option value="" disabled selected>Select Category</option>
+                        <option value="UR">Unreserved (UR)</option>
+                        <option value="SC">Scheduled Caste (SC)</option>
+                        <option value="ST">Scheduled Tribe (ST)</option>
+                        <option value="EBC">Extremely Backward Class (EBC)</option>
+                        <option value="BC">Backward Class (BC)</option>
+                        <option value="EWS">Economically Weaker Section (EWS)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="pref-college">Preferred College (Optional)</label>
+                    <select id="pref-college" name="pref-college">
+                        <option value="Any" selected>Any College</option>
+                        <option value="B.C.E. Bhagalpur">B.C.E. Bhagalpur</option>
+                        <option value="M.I.T. Muzaffarpur">M.I.T. Muzaffarpur</option>
+                        <option value="G.C.E. Gaya">G.C.E. Gaya</option>
+                        <option value="M.C.E. Motihari">M.C.E. Motihari</option>
+                        <option value="D.C.E. Darbhanga">D.C.E. Darbhanga</option>
+                        <option value="N.C.E. Chandi">N.C.E. Chandi</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="pref-branch">Preferred Branch (Optional)</label>
+                    <select id="pref-branch" name="pref-branch">
+                        <option value="Any" selected>Any Branch</option>
+                        <option value="Computer Sc. & Engg.">Computer Sc. & Engg.</option>
+                        <option value="Mathematics and Computing">Mathematics and Computing</option>
+                        <option value="Civil Engg.">Civil Engg.</option>
+                        <option value="Mechanical Engg.">Mechanical Engg.</option>
+                        <option value="Electrical Engg.">Electrical Engg.</option>
+                        <option value="Electrical & Electronics Engg.">Electrical & Electronics Engg.</option>
+                        <option value="Electronics & Communication Engg.">Electronics & Communication Engg.</option>
+                        <option value="I.T.">Information Technology</option>
+                        <option value="Artificial Intelligence & ML">Artificial Intelligence & ML</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    Predict Colleges
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                </button>
+            </form>
+        </section>
+
+        <section id="results-section" class="results-section hidden">
+            <div class="results-header">
+                <h2>Predicted Colleges</h2>
+                <p id="results-summary"></p>
+            </div>
+            
+            <div class="table-container">
+                <table id="results-table">
+                    <thead>
+                        <tr>
+                            <th>College Name</th>
+                            <th>Branch</th>
+                            <th>Category</th>
+                            <th>Closing Rank</th>
+                            <th>Available Seats</th>
+                            <th>Chances</th>
+                        </tr>
+                    </thead>
+                    <tbody id="results-body">
+                        <!-- Results will be dynamically populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
